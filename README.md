@@ -27,3 +27,4 @@ for (var d = 0; d < json.data.length; d++) {
     CSConsole.WriteLine(",");
 }
 ```
+MIT License
