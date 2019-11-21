@@ -32,7 +32,7 @@ namespace AsanaTest
         public void Token()
         {
             var asana = new Asana.Asana();
-            asana.SetToken("0/c45718eb87b2d5761a7116ecf0b6cab4");
+            asana.SetToken("YOUR_TOKEN");
             var tasks = asana.Get("tasks");
             Assert.IsTrue(tasks.ToString().Contains("error"));
         }
@@ -41,8 +41,8 @@ namespace AsanaTest
         public void GetTasks()
         {
             var asana = new Asana.Asana();
-            asana.SetToken("0/c45718eb87b2d5761a7116ecf0b6cab4");
-            asana.SetStringVar("{project_gid}", "802231340507397");
+            asana.SetToken("YOUR_TOKEN");
+            asana.SetStringVar("{project_gid}", "BIG_NUMBER");
             var tasks = asana.Get("projects/{project_gid}/tasks",true);
             Assert.IsTrue(tasks.Length > 0);
         }
@@ -51,8 +51,8 @@ namespace AsanaTest
         public void GetProjects()
         {
             var asana = new Asana.Asana(false);
-            asana.SetToken("0/c45718eb87b2d5761a7116ecf0b6cab4");
-            asana.SetStringVar("{project_gid}", "802231340507397");
+            asana.SetToken("YOUR_TOKEN");
+            asana.SetStringVar("{project_gid}", "BIG_NUMBER");
             asana.SetBooleanVar("pretty", true);
             var tasks = asana.Get("projects");
             Assert.IsTrue(tasks.Length > 0);
